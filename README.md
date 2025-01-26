@@ -1,4 +1,4 @@
-# Costum Recovey device tree for Infinix Note 10 Pro (X695C/X695)
+# Costum Recovey device tree for Infinix Note 10 Pro (Radiant/X695C/X695D/X695)
 
 ## Status
 

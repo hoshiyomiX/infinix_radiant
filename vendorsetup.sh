@@ -6,7 +6,7 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-FDEVICE="X695C"
+FDEVICE="radiant"
 
 fox_get_target_device() {
 local chkdev=$(echo "$BASH_SOURCE" | grep $FDEVICE)
@@ -81,15 +81,14 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
     export OF_SKIP_ORANGEFOX_PROCESS=1
     
     # R11.1 Settings
-    export FOX_VERSION="Stable"
+    export FOX_VERSION="Stable/radiant"
     export FOX_VARIANT="Unofficial"
     export OF_MAINTAINER="Gilang EA"
     export FOX_BUILD_DEVICE="Infinix Note 10 Pro"
     export FOX_BUILD_TYPE="A/B Devices"
+    export TARGET_DEVICE_ALT="X695C"
+    export TARGET_DEVICE_ALT="X695D"
     export TARGET_DEVICE_ALT="X695"
-
-    # Use LZMA
-    export OF_USE_LZMA_COMPRESSION=1
 
     # Log Build Variables
     if [ -n "$FOX_BUILD_LOG_FILE" -a -f "$FOX_BUILD_LOG_FILE" ]; then

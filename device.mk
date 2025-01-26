@@ -4,7 +4,7 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-LOCAL_PATH := device/infinix/X695C
+LOCAL_PATH := device/infinix/radiant
 
 # VAB
 $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota.mk)
@@ -74,8 +74,10 @@ PRODUCT_PACKAGES += \
 
 # Keymaster
 PRODUCT_PACKAGES += \
-    android.hardware.keymaster@4.0 \
-    android.hardware.keymaster@4.1
+    keymaster4 \
+    keymaster4support \
+    keymaster_portable \
+    keymaster_messages
 
 PRODUCT_PACKAGES_DEBUG += \
     update_engine_client
@@ -89,11 +91,15 @@ PRODUCT_PACKAGES += \
 
 # Additional configs
 TW_RECOVERY_ADDITIONAL_RELINK_LIBRARY_FILES += \
-    $(TARGET_OUT_SHARED_LIBRARIES)/android.hardware.keymaster@4.0 \
-    $(TARGET_OUT_SHARED_LIBRARIES)/android.hardware.keymaster@4.1 \
+    $(TARGET_OUT_SHARED_LIBRARIES)/keymaster4 \
+    $(TARGET_OUT_SHARED_LIBRARIES)/keymaster4support \
+    $(TARGET_OUT_SHARED_LIBRARIES)/keymaster_portable \
+    $(TARGET_OUT_SHARED_LIBRARIES)/keymaster_messages \
     $(TARGET_OUT_SHARED_LIBRARIES)/libpuresoftkeymasterdevice.so
 
 TARGET_RECOVERY_DEVICE_MODULES += \
-    android.hardware.keymaster@4.0 \
-    android.hardware.keymaster@4.1 \
+    keymaster4.so \
+    keymaster4support.so \
+    keymaster_portable.so \
+    keymaster_portable.so \
     libpuresoftkeymasterdevice.so

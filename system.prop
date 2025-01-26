@@ -21,5 +21,4 @@ ro.vendor.mtk_microtrust_tee_support=1
 ro.postinstall.fstab.prefix=/system
 
 # other
-keymaster_ver=4.0
 ro.boot.dynamic_partitions=true
